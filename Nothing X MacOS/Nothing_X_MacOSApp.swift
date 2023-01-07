@@ -9,9 +9,24 @@ import SwiftUI
 
 @main
 struct Nothing_X_MacOSApp: App {
+    @State var currentNumber: String = "1"
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+        }
+        
+        MenuBarExtra(currentNumber, systemImage: "\(currentNumber).circle") {
+            // 3
+            Button("One") {
+                currentNumber = "1"
+            }
+            Button("Two") {
+                currentNumber = "2"
+            }
+            Button("Three") {
+                currentNumber = "3"
+            }
         }
     }
 }
