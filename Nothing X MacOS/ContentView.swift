@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var currentNumber: String = "1"
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        Text("Scanning for Headphones")
+                    .onAppear {
+                        BluetoothManager.shared
+                    }
+        Divider()
+
+        Button("Quit") {
+            NSApplication.shared.terminate(nil)
+        }.keyboardShortcut("q")
     }
 }
 

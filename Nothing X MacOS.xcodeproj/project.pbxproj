@@ -14,6 +14,7 @@
 		D60C147029697E7C003E10D4 /* Nothing_X_MacOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60C146F29697E7C003E10D4 /* Nothing_X_MacOSTests.swift */; };
 		D60C147A29697E7D003E10D4 /* Nothing_X_MacOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60C147929697E7D003E10D4 /* Nothing_X_MacOSUITests.swift */; };
 		D60C147C29697E7D003E10D4 /* Nothing_X_MacOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60C147B29697E7D003E10D4 /* Nothing_X_MacOSUITestsLaunchTests.swift */; };
+		D60C148A2969A98C003E10D4 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60C14892969A98C003E10D4 /* BluetoothManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		D60C147529697E7D003E10D4 /* Nothing X MacOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nothing X MacOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60C147929697E7D003E10D4 /* Nothing_X_MacOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nothing_X_MacOSUITests.swift; sourceTree = "<group>"; };
 		D60C147B29697E7D003E10D4 /* Nothing_X_MacOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nothing_X_MacOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D60C148829699B4D003E10D4 /* Nothing-X-MacOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Nothing-X-MacOS-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D60C14892969A98C003E10D4 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +98,13 @@
 		D60C145C29697E7B003E10D4 /* Nothing X MacOS */ = {
 			isa = PBXGroup;
 			children = (
+				D60C148829699B4D003E10D4 /* Nothing-X-MacOS-Info.plist */,
 				D60C145D29697E7B003E10D4 /* Nothing_X_MacOSApp.swift */,
 				D60C145F29697E7B003E10D4 /* ContentView.swift */,
 				D60C146129697E7C003E10D4 /* Assets.xcassets */,
 				D60C146629697E7C003E10D4 /* Nothing_X_MacOS.entitlements */,
 				D60C146329697E7C003E10D4 /* Preview Content */,
+				D60C14892969A98C003E10D4 /* BluetoothManager.swift */,
 			);
 			path = "Nothing X MacOS";
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D60C146029697E7B003E10D4 /* ContentView.swift in Sources */,
+				D60C148A2969A98C003E10D4 /* BluetoothManager.swift in Sources */,
 				D60C145E29697E7B003E10D4 /* Nothing_X_MacOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +430,10 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Nothing-X-MacOS-Info.plist";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app uses Bluetooth to find and maintain connections to your Nothing X's.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "This app uses Bluetooth to find and maintain connections to your Nothing X's.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,6 +461,10 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Nothing-X-MacOS-Info.plist";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app uses Bluetooth to find and maintain connections to your Nothing X's.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "This app uses Bluetooth to find and maintain connections to your Nothing X's.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
