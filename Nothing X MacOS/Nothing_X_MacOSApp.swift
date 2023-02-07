@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct Nothing_X_MacOSApp: App {
-    @State var currentNumber: String = "1"
+    @State var currentNumber: String = "50"
     
     var body: some Scene {
         
