@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D60A9B092992693300749EB6 /* 5by7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D60A9B082992693300749EB6 /* 5by7.ttf */; };
+		D60A9B0A2992693300749EB6 /* 5by7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D60A9B082992693300749EB6 /* 5by7.ttf */; };
+		D60A9B0B2992693300749EB6 /* 5by7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D60A9B082992693300749EB6 /* 5by7.ttf */; };
 		D60C145E29697E7B003E10D4 /* Nothing_X_MacOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60C145D29697E7B003E10D4 /* Nothing_X_MacOSApp.swift */; };
 		D60C146029697E7B003E10D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60C145F29697E7B003E10D4 /* ContentView.swift */; };
 		D60C146229697E7C003E10D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60C146129697E7C003E10D4 /* Assets.xcassets */; };
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D60A9B082992693300749EB6 /* 5by7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 5by7.ttf; sourceTree = "<group>"; };
 		D60C145A29697E7B003E10D4 /* Nothing X MacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nothing X MacOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60C145D29697E7B003E10D4 /* Nothing_X_MacOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nothing_X_MacOSApp.swift; sourceTree = "<group>"; };
 		D60C145F29697E7B003E10D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +79,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D60A9B02299265D000749EB6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D60A9B07299268ED00749EB6 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D60A9B03299265E400749EB6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D60A9B04299265F600749EB6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D60A9B05299265FF00749EB6 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		D60A9B062992660B00749EB6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D60A9B07299268ED00749EB6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D60A9B082992693300749EB6 /* 5by7.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		D60C145129697E7B003E10D4 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +146,11 @@
 		D60C145C29697E7B003E10D4 /* Nothing X MacOS */ = {
 			isa = PBXGroup;
 			children = (
+				D60A9B062992660B00749EB6 /* Controllers */,
+				D60A9B05299265FF00749EB6 /* Stores */,
+				D60A9B04299265F600749EB6 /* Models */,
+				D60A9B03299265E400749EB6 /* Views */,
+				D60A9B02299265D000749EB6 /* Resources */,
 				D60C148829699B4D003E10D4 /* Nothing-X-MacOS-Info.plist */,
 				D60C145D29697E7B003E10D4 /* Nothing_X_MacOSApp.swift */,
 				D60C145F29697E7B003E10D4 /* ContentView.swift */,
@@ -238,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D60A9B092992693300749EB6 /* 5by7.ttf in Resources */,
 				D60C146529697E7C003E10D4 /* Preview Assets.xcassets in Resources */,
 				D60C146229697E7C003E10D4 /* Assets.xcassets in Resources */,
 			);
@@ -247,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D60A9B0A2992693300749EB6 /* 5by7.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D60A9B0B2992693300749EB6 /* 5by7.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

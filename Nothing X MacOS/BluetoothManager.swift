@@ -7,120 +7,105 @@
 
 import Foundation
 import SwiftUI
+import IOBluetooth
 import CoreBluetooth
 
-class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
+enum NothingXBattery:String {
+    case left = "BatteryPercentLeft"
+    case right = "BatteryPercentRight"
+    case `case` = "BatteryPercentCase"
+}
+
+class BluetoothManager: NSObject {
+
+    static let shared = BluetoothManager()
+    private let classOfNothing:UInt32 = 2360324
+    private var disconnectComplete:(_ success:Bool, _ errorInfo:String) -> Void = {_,_ in}
+    private var connectComplete:(_ success:Bool, _ errorInfo:String) -> Void = {_,_ in}
+    private let concurrentQueue = DispatchQueue(label: "concurrentQueue", attributes: .concurrent)
     
-    static var shared = BluetoothManager()
-    private var centralManager:CBCentralManager!
-    
-    var discoveredPeripheral: CBPeripheral!
-    var targetCharacteristic: CBCharacteristic!
-    
-    var connectedHeadphones: [CBPeripheral] = []
+    var centralManager:CBCentralManager!
     
     override init() {
         super.init()
-        centralManager = CBCentralManager(delegate: self, queue: .main)
+        self.centralManager = CBCentralManager(delegate: self, queue: nil)
     }
     
-    func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        // Ensure Bluetooth is on to start scanning
-        if central.state == .poweredOn {
-            print("Bluetooth is available")
-            centralManager.scanForPeripherals(withServices: nil, options: nil)
-        }
-        else if central.state == .poweredOff {
-            print("Bluetooth is Off")
-            // Ask User to Turn On BT
-        }
+    var allPairedDevices:[IOBluetoothDevice] {
+        IOBluetoothDevice.pairedDevices().filter{ $0 is IOBluetoothDevice }.map{ $0 as! IOBluetoothDevice }
     }
     
-    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral,
-                        advertisementData: [String: Any], rssi RSSI: NSNumber) {
-        
-        // Reject if the signal strength is too low to attempt data transfer.
-        // Change the minimum RSSI value depending on your app’s use case.
-//        guard RSSI.intValue >= -50
-//            else {
-//                print("Discovered perhiperal not in expected range, at %d", RSSI.intValue)
-//                return
-//        }
-        
-//        print("Discovered %s at %d", String(describing: peripheral.name), RSSI.intValue)
-        
-        // Device is in range - have we already seen it?
-        if discoveredPeripheral != peripheral {
-            if let name = peripheral.name {
-                if name.contains("Nothing") {
-                    // Save a local copy of the peripheral, so CoreBluetooth doesn't get rid of it.
-                    discoveredPeripheral = peripheral
-                    
-                    // And finally, connect to the peripheral.
-                    print("Connecting to perhiperal %@", peripheral)
-                    centralManager.connect(peripheral, options: nil)
-                }
-            }
-        }
+    var allPairedAirpods:[IOBluetoothDevice] {
+        allPairedDevices.filter{ $0.classOfDevice == classOfNothing }
     }
     
     
-    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral){
-        print("Connected to \(peripheral.name ?? "default")")
-        discoveredPeripheral = peripheral
-        discoveredPeripheral.delegate = self
-        discoveredPeripheral.discoverServices(nil)
-    }
-        
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error:Error?){
-        guard let services = peripheral.services else {return}
-        for service in services{
-            print(service)
-            peripheral.discoverCharacteristics(nil, for: service)
-            // Look for the service  which contains the characteristics
-//            if service.uuid == CBUUID(string: "myServiceUUID"){
-//                // Discover the characteristics
-//                peripheral.discoverCharacteristics(nil, for: service)
-//            }
-        }
-    }
-    
-    //in CBPeripheralDelegate
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service:CBService, error:Error?) {
-        guard let characteristics = service.characteristics else {return}
-        for characteristic in characteristics {
-            print(characteristic)
-            //discover descriptors for the characteristic
-            peripheral.discoverDescriptors(for: characteristic)
-        }
-    }
-    
-    func peripheral(_ peripheral:CBPeripheral, didDiscoverDescriptorsFor characteristic:CBCharacteristic, error:Error?){
-        guard let descriptors = characteristic.descriptors else {return}
-        for descriptor in descriptors{
-            //read value for the descriptor
-            peripheral.readValue(for:descriptor)
-            
-            //print descriptor
-            print(descriptor.description)
-        }
-    }
-    
-    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor descriptor:CBDescriptor, error: Error?) {
-        
-        print("descriptor UUID: \(descriptor.uuid)")
-        print("descriptor type: \(descriptor.uuid)")
-        if let dataValue = descriptor.value as? Data {
-            //print data value as string
-            let value = String(data: dataValue, encoding: .utf8)
-            print("value: \(value ?? "string-val")")
-        } else if let numberValue = descriptor.value as? NSNumber {
-             print("value: \(numberValue)")
-        } else if let stringValue = descriptor.value as?String{
-            print("value: \(stringValue)")
+    func connect(addressStr:String) -> (Bool, String) {
+        if let device = IOBluetoothDevice(addressString: addressStr) {
+            return connect(device: device)
         } else {
-            print("value: \(descriptor.value ?? "default-val")")
+            return (false, "wrong address")
         }
     }
     
+    func connect(device:IOBluetoothDevice) -> (Bool, String) {
+        guard device.isPaired() else {
+            return (false, "unpaired device")
+        }
+        
+        guard !device.isConnected() else {
+            return (false, "device is connected")
+            
+        }
+        
+        let result = device.openConnection(nil, withPageTimeout: 20, authenticationRequired: false)
+        if result == kIOReturnSuccess {
+            return (true, "")
+        } else {
+            return (false, "connect failed:\(result)")
+        }
+    }
+    
+    func disconnect(addressStr:String) -> (Bool, String){
+        if let device = IOBluetoothDevice(addressString: addressStr) {
+            return disconnect(device: device)
+        } else {
+            return (false, "wrong address")
+        }
+    }
+    
+    func disconnect(device:IOBluetoothDevice) -> (Bool, String) {
+        guard device.isPaired() else {
+            return (false, "unpaired device")
+        }
+        
+        guard device.isConnected() else {
+            return (false, "device is disconnected")
+        }
+        
+        let result = device.closeConnection()
+        if result == kIOReturnSuccess {
+            return (true, "")
+        } else {
+            return (false, "disconnect failed:\(result)")
+        }
+    }
+    
+    
+    
+}
+
+extension BluetoothManager:CBCentralManagerDelegate {
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        switch central.state {
+        case .poweredOn:
+            print("Power on")
+        case .poweredOff:
+            print("Power off")
+        case .unsupported:
+            print("Unsupported")
+        default:
+            break
+        }
+    }
 }
