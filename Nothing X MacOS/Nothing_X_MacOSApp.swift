@@ -9,14 +9,15 @@ import SwiftUI
 
 @main
 struct Nothing_X_MacOSApp: App {
-    @State var currentNumber: String = "50"
+    @State var batteryPercent: String = "50"
+    @State var indiceType: String = "square.fill" //circle | circle.fill | square | square.fill
     
     var body: some Scene {
         
         MenuBarExtra {
             ContentView()
         } label: {
-            Label(currentNumber, systemImage: "\(currentNumber).circle")
+            Label(batteryPercent, systemImage: "\(batteryPercent).\(indiceType)" )
         }
         .menuBarExtraStyle(.window)
     
