@@ -18,6 +18,9 @@
 		D60C147A29697E7D003E10D4 /* Nothing_X_MacOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60C147929697E7D003E10D4 /* Nothing_X_MacOSUITests.swift */; };
 		D60C147C29697E7D003E10D4 /* Nothing_X_MacOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60C147B29697E7D003E10D4 /* Nothing_X_MacOSUITestsLaunchTests.swift */; };
 		D60C148A2969A98C003E10D4 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60C14892969A98C003E10D4 /* BluetoothManager.swift */; };
+		D66E5C1A29941C940001BF82 /* ear_1_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D66E5C1729941C940001BF82 /* ear_1_2x.png */; };
+		D66E5C1B29941C940001BF82 /* ear_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D66E5C1829941C940001BF82 /* ear_1.png */; };
+		D66E5C1C29941C940001BF82 /* ear_1_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D66E5C1929941C940001BF82 /* ear_1_3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,9 @@
 		D60C147B29697E7D003E10D4 /* Nothing_X_MacOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nothing_X_MacOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D60C148829699B4D003E10D4 /* Nothing-X-MacOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Nothing-X-MacOS-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D60C14892969A98C003E10D4 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		D66E5C1729941C940001BF82 /* ear_1_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ear_1_2x.png; sourceTree = "<group>"; };
+		D66E5C1829941C940001BF82 /* ear_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ear_1.png; sourceTree = "<group>"; };
+		D66E5C1929941C940001BF82 /* ear_1_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ear_1_3x.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 		D60A9B02299265D000749EB6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D6968CEC299419780010C54D /* Images */,
 				D60A9B07299268ED00749EB6 /* Fonts */,
 			);
 			path = Resources;
@@ -185,6 +192,16 @@
 				D60C147B29697E7D003E10D4 /* Nothing_X_MacOSUITestsLaunchTests.swift */,
 			);
 			path = "Nothing X MacOSUITests";
+			sourceTree = "<group>";
+		};
+		D6968CEC299419780010C54D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D66E5C1729941C940001BF82 /* ear_1_2x.png */,
+				D66E5C1929941C940001BF82 /* ear_1_3x.png */,
+				D66E5C1829941C940001BF82 /* ear_1.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,9 +308,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D66E5C1A29941C940001BF82 /* ear_1_2x.png in Resources */,
+				D66E5C1B29941C940001BF82 /* ear_1.png in Resources */,
 				D60A9B092992693300749EB6 /* 5by7.ttf in Resources */,
 				D60C146529697E7C003E10D4 /* Preview Assets.xcassets in Resources */,
 				D60C146229697E7C003E10D4 /* Assets.xcassets in Resources */,
+				D66E5C1C29941C940001BF82 /* ear_1_3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
