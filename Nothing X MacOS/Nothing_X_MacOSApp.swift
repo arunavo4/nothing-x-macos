@@ -9,13 +9,12 @@ import SwiftUI
 
 @main
 struct Nothing_X_MacOSApp: App {
-    @State var batteryPercent: String = "50"
-    @State var indiceType: String = "square.fill" //circle | circle.fill | square | square.fill
+    @State var batteryPercent: String = "49"
+    @State var indiceType: String = "circle" //circle | circle.fill | square | square.fill
     
     var body: some Scene {
-        
         MenuBarExtra {
-            ContentView()
+            HomeView()
         } label: {
             Label(batteryPercent, systemImage: "\(batteryPercent).\(indiceType)" )
         }
