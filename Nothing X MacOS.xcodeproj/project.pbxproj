@@ -35,6 +35,7 @@
 		D6AEF354299C808B00FB5DBC /* QuitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEF353299C808B00FB5DBC /* QuitButtonView.swift */; };
 		D6AEF356299C80EF00FB5DBC /* DeviceNameDotTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEF355299C80EF00FB5DBC /* DeviceNameDotTextView.swift */; };
 		D6AEF358299C846700FB5DBC /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEF357299C846700FB5DBC /* BackButtonView.swift */; };
+		D6AEF35A299C98A400FB5DBC /* SwitchToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEF359299C98A400FB5DBC /* SwitchToggleStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		D6AEF353299C808B00FB5DBC /* QuitButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitButtonView.swift; sourceTree = "<group>"; };
 		D6AEF355299C80EF00FB5DBC /* DeviceNameDotTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceNameDotTextView.swift; sourceTree = "<group>"; };
 		D6AEF357299C846700FB5DBC /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
+		D6AEF359299C98A400FB5DBC /* SwitchToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchToggleStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 			children = (
 				D62BA6B4299A7EA2007D52C2 /* ButtonStyles.swift */,
 				D6AEF344299BECB000FB5DBC /* ProgressViewStyles.swift */,
+				D6AEF359299C98A400FB5DBC /* SwitchToggleStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				D6AEF345299BECB000FB5DBC /* ProgressViewStyles.swift in Sources */,
 				D6AEF34F299C7FA500FB5DBC /* NoiseControlView.swift in Sources */,
 				D6AEF354299C808B00FB5DBC /* QuitButtonView.swift in Sources */,
+				D6AEF35A299C98A400FB5DBC /* SwitchToggleStyle.swift in Sources */,
 				D6AEF337299BD58600FB5DBC /* ConnectView.swift in Sources */,
 				D6AEF335299BD56200FB5DBC /* HomeView.swift in Sources */,
 				D6AEF34B299C7ED400FB5DBC /* BatteryIndicatorView.swift in Sources */,

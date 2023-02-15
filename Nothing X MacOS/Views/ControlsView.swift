@@ -9,7 +9,38 @@ import SwiftUI
 
 struct ControlsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            
+            // Back - Heading - Settings | Quit
+            HStack {
+                // Back
+                BackButtonView()
+                
+                Spacer()
+                
+                // Settings
+                SettingsButtonView()
+                
+                // Quit
+                QuitButtonView()
+            }
+            
+            VStack(alignment: .center) {
+                
+                Spacer()
+                
+                // Battery Indicator
+                BatteryIndicatorView()
+                
+                Spacer()
+
+            }
+            
+        }
+        .padding(4)
+        .background(.black)
+        .frame(width: 250, height: 230)
+        .cornerRadius(8)
     }
 }
 

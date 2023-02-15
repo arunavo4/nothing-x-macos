@@ -40,6 +40,15 @@ struct BlackImageButtonCicle: ButtonStyle {
     }
 }
 
+struct BlackImageButtonCicleLarge: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(width: 50, height: 50)
+            .background(.black)
+            .clipShape(Circle())
+    }
+}
+
 
 struct OffWhiteConnectButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
@@ -74,6 +83,19 @@ struct TransparentANCButton: ButtonStyle {
     }
 }
 
+struct FindMyTransparentButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        return HStack {
+            configuration.label
+                .font(.system(size: 10, weight: .light))
+            Spacer()
+            Image(systemName: "arrow.right")
+                .padding(.trailing, 10)
+        }
+        .frame(width: 200)
+        .padding(6)
+    }
+}
 
 struct BlackButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
