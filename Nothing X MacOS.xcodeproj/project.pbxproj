@@ -34,6 +34,7 @@
 		D6AEF352299C807F00FB5DBC /* SettingsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEF351299C807F00FB5DBC /* SettingsButtonView.swift */; };
 		D6AEF354299C808B00FB5DBC /* QuitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEF353299C808B00FB5DBC /* QuitButtonView.swift */; };
 		D6AEF356299C80EF00FB5DBC /* DeviceNameDotTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEF355299C80EF00FB5DBC /* DeviceNameDotTextView.swift */; };
+		D6AEF358299C846700FB5DBC /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEF357299C846700FB5DBC /* BackButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		D6AEF351299C807F00FB5DBC /* SettingsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonView.swift; sourceTree = "<group>"; };
 		D6AEF353299C808B00FB5DBC /* QuitButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitButtonView.swift; sourceTree = "<group>"; };
 		D6AEF355299C80EF00FB5DBC /* DeviceNameDotTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceNameDotTextView.swift; sourceTree = "<group>"; };
+		D6AEF357299C846700FB5DBC /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 				D6AEF34A299C7ED400FB5DBC /* BatteryIndicatorView.swift */,
 				D6AEF351299C807F00FB5DBC /* SettingsButtonView.swift */,
 				D6AEF353299C808B00FB5DBC /* QuitButtonView.swift */,
+				D6AEF357299C846700FB5DBC /* BackButtonView.swift */,
 				D6AEF355299C80EF00FB5DBC /* DeviceNameDotTextView.swift */,
 				D6AEF34E299C7FA500FB5DBC /* NoiseControlView.swift */,
 			);
@@ -395,6 +398,7 @@
 				D6AEF352299C807F00FB5DBC /* SettingsButtonView.swift in Sources */,
 				D6AEF347299C16DC00FB5DBC /* SettingsView.swift in Sources */,
 				D6AEF33B299BD5DE00FB5DBC /* ControlsView.swift in Sources */,
+				D6AEF358299C846700FB5DBC /* BackButtonView.swift in Sources */,
 				D6AEF356299C80EF00FB5DBC /* DeviceNameDotTextView.swift in Sources */,
 				D6AEF345299BECB000FB5DBC /* ProgressViewStyles.swift in Sources */,
 				D6AEF34F299C7FA500FB5DBC /* NoiseControlView.swift in Sources */,
