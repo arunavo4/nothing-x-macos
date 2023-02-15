@@ -7,7 +7,62 @@
 
 import SwiftUI
 
+enum EarBudSide: String, CaseIterable, Identifiable {
+    case left
+    case right
+
+    var id: String { self.rawValue }
+}
+
+
+struct CustomPickerView<SelectionValue: Hashable>: View {
+    var items: [CustomPickerItem]
+    @Binding var selection: SelectionValue
+    
+    var body: some View {
+        HStack {
+            ForEach(items) { item in
+                VStack {
+                    Text(item.title)
+                        .padding()
+                        .onTapGesture {
+                            selection = item.tag as! SelectionValue
+                        }
+                    if selection == item.tag as! SelectionValue {
+                        Rectangle()
+                            .frame(height: 4)
+                            .foregroundColor(.blue)
+                    }
+                }
+            }
+        }
+    }
+}
+
+struct CustomPickerItem: Identifiable, Hashable {
+    var id = UUID()
+    var title: String
+    var tag: AnyHashable
+}
+
+
 struct ControlsView: View {
+    private let tripleTapOptions = ["SKIP FORWARD", "SKIP BACK", "VOICE ASSISTANT", "NO ACTION"]
+    private let tapAndHoldOptions = ["NOISE CONTROL", "NO EXTRA ACTION"]
+    
+    @State private var selectedTripleTapOp = "SKIP FORWARD"
+    @State private var selectedtapAndHoldOp = "NOISE CONTROL"
+    
+    @State private var selectedSide = EarBudSide.left
+    
+    let items = [
+            CustomPickerItem(title: "Item 1", tag: 0),
+            CustomPickerItem(title: "Item 2", tag: 1),
+            CustomPickerItem(title: "Item 3", tag: 2)
+        ]
+        
+    @State private var selection = 0
+    
     var body: some View {
         VStack {
             
@@ -27,7 +82,30 @@ struct ControlsView: View {
             
             VStack(alignment: .center) {
                 
+                // Left - Right
+                Picker("", selection: $selectedSide) {
+                    ForEach(EarBudSide.allCases) { side in
+                        Text(side.rawValue.uppercased())
+                            .tag(side)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                
+                CustomPickerView(items: items, selection: $selection)
+                
+                
                 Spacer()
+                
+                // Selector Menu
+                VStack {
+                    Picker("Triple Tap Options", selection: $selectedTripleTapOp) {
+                        ForEach(tripleTapOptions, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    Text(selectedTripleTapOp)
+                }
+                
                 
                 // Battery Indicator
                 BatteryIndicatorView()

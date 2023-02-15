@@ -14,7 +14,7 @@ struct Nothing_X_MacOSApp: App {
     
     var body: some Scene {
         MenuBarExtra {
-            FindMyBudsView()
+            ControlsView()
         } label: {
             Label(batteryPercent, systemImage: "\(batteryPercent).\(indiceType)" )
         }
