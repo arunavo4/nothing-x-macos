@@ -10,10 +10,7 @@ import SwiftUI
 struct SettingsButtonView: View {
     var body: some View {
         // Settings
-        Button(action: {
-            // Your action code here
-            print("Settings Button Pressed!")
-        }) {
+        NavigationLink(value: Destination.settings) {
             Image(systemName: "gearshape")
                 .font(.system(size: 16))
         }

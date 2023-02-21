@@ -14,7 +14,18 @@ struct Nothing_X_MacOSApp: App {
     
     var body: some Scene {
         MenuBarExtra {
-            ControlsView()
+            NavigationStack {
+                HomeView()
+                    .navigationDestination(for: Destination.self) { destination in
+                        switch(destination) {
+                            case .home: HomeView()
+                            case .equalizer: EqualizerView()
+                            case .controls: ControlsView()
+                            case .settings: SettingsView()
+                            case .findMyBuds: FindMyBudsView()
+                        }
+                    }
+            }
         } label: {
             Label(batteryPercent, systemImage: "\(batteryPercent).\(indiceType)" )
         }

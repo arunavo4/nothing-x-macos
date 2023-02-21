@@ -10,8 +10,8 @@ import SwiftUI
 struct HomeView: View {
     
     var body: some View {
-        VStack(alignment: .leading){
-            HStack() {
+        VStack {
+            HStack {
                 Spacer(minLength: 5)
                 
                 // ear (1)
@@ -36,16 +36,12 @@ struct HomeView: View {
                         //HStack - Equaliser | Controls
                         HStack(spacing: 5) {
                             //EQUALISER
-                            Button("EQUALISER") {
-                                print("EQUALISER Button pressed!")
-                            }
-                            .buttonStyle(GreyButton())
+                            NavigationLink("EQUALISER", value: Destination.equalizer)
+                                .buttonStyle(GreyButton())
                             
                             //CONTROLS
-                            Button("CONTROLS") {
-                                print("CONTROLS Button pressed!")
-                            }
-                            .buttonStyle(GreyButton())
+                            NavigationLink("CONTROLS", value: Destination.controls)
+                                .buttonStyle(GreyButton())
                         }
                         
                         Spacer()
@@ -65,7 +61,7 @@ struct HomeView: View {
                 
             }
         }
-        .padding(4)
+        .padding(0)
         .background(.black)
         .frame(width: 250, height: 230)
         .cornerRadius(8)

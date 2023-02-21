@@ -92,8 +92,9 @@ struct FindMyTransparentButton: ButtonStyle {
             Image(systemName: "arrow.right")
                 .padding(.trailing, 10)
         }
-        .frame(width: 200)
-        .padding(6)
+        .frame(width: 200, height: 24)
+        .background(.black)
+        .padding(0)
     }
 }
 

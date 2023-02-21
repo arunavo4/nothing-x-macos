@@ -115,6 +115,7 @@ struct ControlsView: View {
             }
             
         }
+        .navigationBarBackButtonHidden(true)
         .padding(4)
         .background(.black)
         .frame(width: 250, height: 230)

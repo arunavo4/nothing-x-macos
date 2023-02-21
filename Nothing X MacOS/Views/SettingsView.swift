@@ -21,9 +21,6 @@ struct SettingsView: View {
                 
                 Spacer()
                 
-                // Settings
-                SettingsButtonView()
-                
                 // Quit
                 QuitButtonView()
             }
@@ -48,10 +45,8 @@ struct SettingsView: View {
                     Toggle("LOW LAG MODE 􀅴", isOn: $LowLagMode).help(Text("Minimise latency for an improved gaming experience."))
                     
                     // Find My Earbuds
-                    Button("FIND MY EARBUDS") {
-                        print("FIND MY EARBUDS Pressed!")
-                    }
-                    .buttonStyle(FindMyTransparentButton())
+                    NavigationLink("FIND MY EARBUDS", value: Destination.findMyBuds)
+                        .buttonStyle(FindMyTransparentButton())
                 }
                 .toggleStyle(SwitchToggleStyle())
                 
@@ -61,6 +56,7 @@ struct SettingsView: View {
             .frame(width: 200)
             
         }
+        .navigationBarBackButtonHidden(true)
         .padding(4)
         .background(.black)
         .frame(width: 250, height: 230)
