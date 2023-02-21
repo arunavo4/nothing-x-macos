@@ -18,9 +18,6 @@ struct FindMyBudsView: View {
                 
                 Spacer()
                 
-                // Settings
-                SettingsButtonView()
-                
                 // Quit
                 QuitButtonView()
             }
@@ -84,6 +81,7 @@ struct FindMyBudsView: View {
             .frame(width: 200)
             
         }
+        .navigationBarBackButtonHidden(true)
         .padding(4)
         .background(.black)
         .frame(width: 250, height: 230)

@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct BackButtonView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         Button(action: {
-            // Your action code here
             print("Back Button Pressed!")
+            dismiss()
         }) {
             Image(systemName: "arrow.backward")
                 .font(.system(size: 16))

@@ -11,8 +11,6 @@ struct QuitButtonView: View {
     var body: some View {
         // Quit
         Button(action: {
-            // Your action code here
-            
             // Make sure to close/disconnect the bluetooth channel before quitting.
             print("Quit Button Pressed!")
             NSApplication.shared.terminate(nil)
