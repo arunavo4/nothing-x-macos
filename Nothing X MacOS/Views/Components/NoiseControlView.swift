@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct NoiseControlView: View {
+struct NoiseControlView<SelectedANC: Hashable>: View {
+    @Binding var selection: SelectedANC
+    
     var body: some View {
         // NOISE CONTROL
         VStack(alignment: .center) {
@@ -27,33 +29,16 @@ struct NoiseControlView: View {
                     
                     // 3 buttons
                     HStack(spacing: 5) {
-                        Button(action: {
-                            // Your action code here
-                            print("ANC ON Button Pressed!")
-                        }) {
-                            Image(systemName: "checkmark.seal.fill")
-                                .font(.system(size: 14, weight:.regular)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8)))
+                        ForEach(NoiseControlOptions.allCases) { option in
+                            Button(action: {
+                                selection = option.id as! SelectedANC
+                                
+                                print("\(option) Button Pressed!")
+                            }) {
+                                Image(systemName: option.icon)
+                            }
+                            .buttonStyle(ANCButton(selected: selection == option.id as! SelectedANC))
                         }
-                        .buttonStyle(TransparentANCButton())
-                        
-                        
-                        Button(action: {
-                            // Your action code here
-                            print("Transparency Button Pressed!")
-                        }) {
-                            Image(systemName: "cube.transparent.fill")
-                                .font(.system(size: 14, weight:.regular)).foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.8)))
-                        }
-                        .buttonStyle(OffWhiteANCButton())
-                        
-                        Button(action: {
-                            // Your action code here
-                            print("Transparency Button Pressed!")
-                        }) {
-                            Image(systemName: "xmark.seal.fill")
-                                .font(.system(size: 14, weight:.regular)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8)))
-                        }
-                        .buttonStyle(TransparentANCButton())
                     }
                     .fixedSize()
                     .frame(width: 180, height: 34)
@@ -61,14 +46,14 @@ struct NoiseControlView: View {
                 
             }
             
-            
         }
         .frame(width: 200, height: 60)
     }
 }
 
 struct NoiseControlView_Previews: PreviewProvider {
+    static let store = Store()
     static var previews: some View {
-        NoiseControlView()
+        NoiseControlView(selection: .constant(NoiseControlOptions.transparency.rawValue)).environmentObject(store)
     }
 }

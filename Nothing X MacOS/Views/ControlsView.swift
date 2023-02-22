@@ -49,10 +49,6 @@ struct ControlsView: View {
 
 struct ControlsView_Previews: PreviewProvider {
     static let store = Store()
-    
-    // For more advanced EnvironmentObject use in Previews
-    //  https://www.hackingwithswift.com/forums/swiftui/swiftui-preview-and-atenvironmentobject/6844
-    
     static var previews: some View {
         ControlsView().environmentObject(store)
     }
