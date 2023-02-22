@@ -9,8 +9,10 @@ import SwiftUI
 
 @main
 struct Nothing_X_MacOSApp: App {
+    @StateObject var store = Store()
+    
     @State var batteryPercent: String = "49"
-    @State var indiceType: String = "circle" //circle | circle.fill | square | square.fill
+    let indiceType: String = "circle" //circle | circle.fill | square | square.fill
     
     var body: some Scene {
         MenuBarExtra {
@@ -21,11 +23,14 @@ struct Nothing_X_MacOSApp: App {
                             case .home: HomeView()
                             case .equalizer: EqualizerView()
                             case .controls: ControlsView()
+                            case .controlsTripleTap: ControlsDetailView(destination: .controlsTripleTap)
+                            case .controlsTapHold: ControlsDetailView(destination: .controlsTapHold)
                             case .settings: SettingsView()
                             case .findMyBuds: FindMyBudsView()
                         }
                     }
             }
+            .environmentObject(store)
         } label: {
             Label(batteryPercent, systemImage: "\(batteryPercent).\(indiceType)" )
         }

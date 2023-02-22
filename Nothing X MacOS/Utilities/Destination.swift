@@ -12,6 +12,8 @@ enum Destination: String, CaseIterable, Hashable {
     case home = "home"
     case equalizer = "equalizer"
     case controls = "controls"
+    case controlsTripleTap = "controlsTripleTap"
+    case controlsTapHold = "controlsTapHold"
     case settings = "settings"
     case findMyBuds = "findMyBuds"
 }

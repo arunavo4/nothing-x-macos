@@ -108,3 +108,14 @@ struct BlackButton: ButtonStyle {
             .clipShape(Capsule())
     }
 }
+
+struct ControlTapButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(10)
+            .padding(.leading, 6)
+            .background(Color(#colorLiteral(red: 0.10980392247438431, green: 0.11372549086809158, blue: 0.12156862765550613, alpha: 1)))
+            .font(.system(size: 10, weight:.light)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+            .cornerRadius(10)
+    }
+}
