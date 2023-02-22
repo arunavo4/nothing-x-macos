@@ -36,6 +36,11 @@
 		D6AEF358299C846700FB5DBC /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEF357299C846700FB5DBC /* BackButtonView.swift */; };
 		D6AEF35A299C98A400FB5DBC /* SwitchToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEF359299C98A400FB5DBC /* SwitchToggleStyle.swift */; };
 		D6BF8934299CDE430068BBE6 /* ProgressViewStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BF8933299CDE430068BBE6 /* ProgressViewStyles.swift */; };
+		D6EAE47B29A4D4BE00C9675D /* BudsSidePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EAE47A29A4D4BE00C9675D /* BudsSidePickerView.swift */; };
+		D6EAE47D29A4DC6F00C9675D /* MenuStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EAE47C29A4DC6F00C9675D /* MenuStyles.swift */; };
+		D6EAE47F29A4E84200C9675D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EAE47E29A4E84200C9675D /* Store.swift */; };
+		D6EAE48529A5F91A00C9675D /* ControlMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EAE48429A5F91A00C9675D /* ControlMenuView.swift */; };
+		D6EAE48729A69E5E00C9675D /* ControlsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EAE48629A69E5E00C9675D /* ControlsDetailView.swift */; };
 		D6EB900D29A4868200D4C542 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EB900C29A4868200D4C542 /* Destination.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +94,11 @@
 		D6AEF357299C846700FB5DBC /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
 		D6AEF359299C98A400FB5DBC /* SwitchToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchToggleStyle.swift; sourceTree = "<group>"; };
 		D6BF8933299CDE430068BBE6 /* ProgressViewStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewStyles.swift; sourceTree = "<group>"; };
+		D6EAE47A29A4D4BE00C9675D /* BudsSidePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudsSidePickerView.swift; sourceTree = "<group>"; };
+		D6EAE47C29A4DC6F00C9675D /* MenuStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuStyles.swift; sourceTree = "<group>"; };
+		D6EAE47E29A4E84200C9675D /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		D6EAE48429A5F91A00C9675D /* ControlMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlMenuView.swift; sourceTree = "<group>"; };
+		D6EAE48629A69E5E00C9675D /* ControlsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsDetailView.swift; sourceTree = "<group>"; };
 		D6EB900C29A4868200D4C542 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +144,7 @@
 				D6AEF334299BD56200FB5DBC /* HomeView.swift */,
 				D6AEF338299BD5C900FB5DBC /* EqualizerView.swift */,
 				D6AEF33A299BD5DE00FB5DBC /* ControlsView.swift */,
+				D6EAE48629A69E5E00C9675D /* ControlsDetailView.swift */,
 				D6AEF346299C16DC00FB5DBC /* SettingsView.swift */,
 				D6AEF348299C16EB00FB5DBC /* FindMyBudsView.swift */,
 			);
@@ -143,6 +154,7 @@
 		D60A9B04299265F600749EB6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D6EAE47E29A4E84200C9675D /* Store.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -243,6 +255,7 @@
 				D62BA6B4299A7EA2007D52C2 /* ButtonStyles.swift */,
 				D6BF8933299CDE430068BBE6 /* ProgressViewStyles.swift */,
 				D6AEF359299C98A400FB5DBC /* SwitchToggleStyle.swift */,
+				D6EAE47C29A4DC6F00C9675D /* MenuStyles.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -256,6 +269,8 @@
 				D6AEF357299C846700FB5DBC /* BackButtonView.swift */,
 				D6AEF355299C80EF00FB5DBC /* DeviceNameDotTextView.swift */,
 				D6AEF34E299C7FA500FB5DBC /* NoiseControlView.swift */,
+				D6EAE47A29A4D4BE00C9675D /* BudsSidePickerView.swift */,
+				D6EAE48429A5F91A00C9675D /* ControlMenuView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -397,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6EAE47F29A4E84200C9675D /* Store.swift in Sources */,
 				D62BA6B5299A7EA3007D52C2 /* ButtonStyles.swift in Sources */,
 				D6AEF349299C16EB00FB5DBC /* FindMyBudsView.swift in Sources */,
 				D6EB900D29A4868200D4C542 /* Destination.swift in Sources */,
@@ -405,6 +421,7 @@
 				D6AEF352299C807F00FB5DBC /* SettingsButtonView.swift in Sources */,
 				D6AEF347299C16DC00FB5DBC /* SettingsView.swift in Sources */,
 				D6AEF33B299BD5DE00FB5DBC /* ControlsView.swift in Sources */,
+				D6EAE47D29A4DC6F00C9675D /* MenuStyles.swift in Sources */,
 				D6AEF358299C846700FB5DBC /* BackButtonView.swift in Sources */,
 				D6AEF356299C80EF00FB5DBC /* DeviceNameDotTextView.swift in Sources */,
 				D6AEF34F299C7FA500FB5DBC /* NoiseControlView.swift in Sources */,
@@ -413,8 +430,11 @@
 				D6AEF35A299C98A400FB5DBC /* SwitchToggleStyle.swift in Sources */,
 				D6AEF337299BD58600FB5DBC /* ConnectView.swift in Sources */,
 				D6AEF335299BD56200FB5DBC /* HomeView.swift in Sources */,
+				D6EAE48529A5F91A00C9675D /* ControlMenuView.swift in Sources */,
 				D6AEF34B299C7ED400FB5DBC /* BatteryIndicatorView.swift in Sources */,
+				D6EAE48729A69E5E00C9675D /* ControlsDetailView.swift in Sources */,
 				D60C145E29697E7B003E10D4 /* Nothing_X_MacOSApp.swift in Sources */,
+				D6EAE47B29A4D4BE00C9675D /* BudsSidePickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

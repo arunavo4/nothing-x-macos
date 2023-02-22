@@ -12,7 +12,7 @@ struct HomeView: View {
     var body: some View {
         VStack {
             HStack {
-                Spacer(minLength: 5)
+                Spacer(minLength: 10)
                 
                 // ear (1)
                 DeviceNameDotTextView()
@@ -30,38 +30,42 @@ struct HomeView: View {
                         QuitButtonView()
                     }
                     
-                    VStack {
-                        Spacer()
-                        
-                        //HStack - Equaliser | Controls
-                        HStack(spacing: 5) {
-                            //EQUALISER
-                            NavigationLink("EQUALISER", value: Destination.equalizer)
-                                .buttonStyle(GreyButton())
+                    HStack {
+                        VStack {
+                            Spacer()
                             
-                            //CONTROLS
-                            NavigationLink("CONTROLS", value: Destination.controls)
-                                .buttonStyle(GreyButton())
+                            //HStack - Equaliser | Controls
+                            HStack(spacing: 5) {
+                                //EQUALISER
+                                NavigationLink("EQUALISER", value: Destination.equalizer)
+                                    .buttonStyle(GreyButton())
+                                
+                                //CONTROLS
+                                NavigationLink("CONTROLS", value: Destination.controls)
+                                    .buttonStyle(GreyButton())
+                            }
+                            
+                            Spacer()
+                            
+                            // NOISE CONTROL
+                            NoiseControlView()
+                            
+                            Spacer()
+                            
+                            // Battery Indicator
+                            BatteryIndicatorView()
+                            
+                            Spacer()
                         }
-                        
-                        Spacer()
-                        
-                        // NOISE CONTROL
-                        NoiseControlView()
-                        
-                        Spacer()
-                        
-                        // Battery Indicator
-                        BatteryIndicatorView()
-                        
-                        Spacer()
+                        // Compensates for Leading side Spacer + DotTextView
+                        Spacer(minLength: 24)
                     }
                     
                 }
                 
             }
         }
-        .padding(0)
+        .padding(4)
         .background(.black)
         .frame(width: 250, height: 230)
         .cornerRadius(8)

@@ -8,22 +8,20 @@
 import SwiftUI
 
 struct BatteryIndicatorView: View {
-    @State var leftBattery = 45.0
-    @State var caseBattery = 35.0
-    @State var rightBattery = 40.0
+    @EnvironmentObject var store: Store
     
     var body: some View {
         HStack(spacing: 10) {
             // Left Battery
-            ProgressView("\(Int(leftBattery))% L", value: leftBattery, total: 100)
+            ProgressView("\(Int(store.leftBattery))% L", value: store.leftBattery, total: 100)
                 .progressViewStyle(NothingProgressViewStyle())
             
             // Case Battery
-            ProgressView("\(Int(caseBattery))% C", value: caseBattery, total: 100)
+            ProgressView("\(Int(store.caseBattery))% C", value: store.caseBattery, total: 100)
                 .progressViewStyle(NothingProgressViewStyle())
             
             // Right Battery
-            ProgressView("\(Int(rightBattery))% R", value: rightBattery, total: 100)
+            ProgressView("\(Int(store.rightBattery))% R", value: store.rightBattery, total: 100)
                 .progressViewStyle(NothingProgressViewStyle())
         }
         .frame(width: 170)
@@ -31,7 +29,8 @@ struct BatteryIndicatorView: View {
 }
 
 struct BatteryIndicatorView_Previews: PreviewProvider {
+    static let store = Store()
     static var previews: some View {
-        BatteryIndicatorView()
+        BatteryIndicatorView().environmentObject(store)
     }
 }
