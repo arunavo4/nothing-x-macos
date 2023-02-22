@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var store: Store
     
     var body: some View {
         VStack {
@@ -48,7 +49,7 @@ struct HomeView: View {
                             Spacer()
                             
                             // NOISE CONTROL
-                            NoiseControlView()
+                            NoiseControlView(selection: $store.noiseControlSelected)
                             
                             Spacer()
                             
@@ -73,7 +74,12 @@ struct HomeView: View {
 }
 
 struct HomeView_Previews: PreviewProvider {
+    static let store = Store()
+    
+    // For more advanced EnvironmentObject use in Previews
+    // https://www.hackingwithswift.com/forums/swiftui/swiftui-preview-and-atenvironmentobject/6844
+    
     static var previews: some View {
-        HomeView()
+        HomeView().environmentObject(store)
     }
 }

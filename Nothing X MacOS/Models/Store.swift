@@ -27,12 +27,33 @@ enum EarBudSide: String, CaseIterable, Identifiable, Hashable {
     var id: String { self.rawValue }
 }
 
+enum NoiseControlOptions: String, CaseIterable, Identifiable, Hashable {
+    case anc
+    case transparency
+    case off
+    
+    var icon: String {
+        switch self {
+            case .anc:
+                return "checkmark.seal.fill"
+            case .transparency:
+                return "cube.transparent.fill"
+            case .off:
+                return "xmark.seal.fill"
+        }
+    }
+    
+    var id: String { self.rawValue }
+}
+
 class Store: ObservableObject {
     @Published var selectedTripleTapOp: TripleTapOptions = TripleTapOptions.skip_forward
     @Published var selectedtapAndHoldOp: TapAndHoldOptions = TapAndHoldOptions.noise_control
     @Published var fixedtapAndHoldOp = "decline incoming call"
     
     @Published var earBudSelectedSide = EarBudSide.left.rawValue
+    
+    @Published var noiseControlSelected = NoiseControlOptions.transparency.rawValue
     
     @Published var leftBattery: Float16 = 50
     @Published var caseBattery: Float16 = 70
