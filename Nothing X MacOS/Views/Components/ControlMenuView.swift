@@ -21,9 +21,9 @@ struct ControlMenuView: View {
                         }
                         
                         Spacer(minLength: 2)
-                        
-                        Text(self.store.selectedTripleTapOp.rawValue.capitalized)
-                            .fontWeight(.ultraLight)
+
+                        Text(self.store.selectedTripleTapOp[store.earBudSelectedSide == EarBudSide.left.rawValue ? 0 : 1].rawValue.capitalized)
+                                .fontWeight(.ultraLight)
                     }
                     
                     Spacer()
@@ -48,7 +48,7 @@ struct ControlMenuView: View {
                         
                         Spacer(minLength: 2)
                         
-                        Text(self.store.selectedtapAndHoldOp.rawValue.capitalized)
+                        Text(self.store.selectedtapAndHoldOp[store.earBudSelectedSide == EarBudSide.left.rawValue ? 0 : 1].rawValue.capitalized)
                             .fontWeight(.ultraLight)
                         
                         Spacer(minLength: 2)

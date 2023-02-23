@@ -47,8 +47,9 @@ enum NoiseControlOptions: String, CaseIterable, Identifiable, Hashable {
 }
 
 class Store: ObservableObject {
-    @Published var selectedTripleTapOp: TripleTapOptions = TripleTapOptions.skip_forward
-    @Published var selectedtapAndHoldOp: TapAndHoldOptions = TapAndHoldOptions.noise_control
+    // [left, right]
+    @Published var selectedTripleTapOp: [TripleTapOptions] = [TripleTapOptions.skip_forward, TripleTapOptions.skip_forward]
+    @Published var selectedtapAndHoldOp: [TapAndHoldOptions] = [TapAndHoldOptions.noise_control, TapAndHoldOptions.noise_control]
     @Published var fixedtapAndHoldOp = "decline incoming call"
     
     @Published var earBudSelectedSide = EarBudSide.left.rawValue

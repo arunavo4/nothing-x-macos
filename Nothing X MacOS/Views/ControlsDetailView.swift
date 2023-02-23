@@ -29,6 +29,7 @@ struct ControlsDetailView: View {
             }
             
             VStack(alignment: .center) {
+                // Option Title
                 HStack{
                     if(destination == .controlsTripleTap) {
                         Text("TRIPLE TAP")
@@ -42,11 +43,21 @@ struct ControlsDetailView: View {
                     }
                 }
                 
-                Divider().foregroundColor(.black)
+                // --------- LEFT ---------
+                HStack {
+                    RoundedRectangle(cornerRadius: 20)
+                        .frame(width: 50, height: 1)
+                    Text(store.earBudSelectedSide.uppercased()).font(.system(size: 10, weight:.light))
+                    RoundedRectangle(cornerRadius: 20)
+                        .frame(width: 50, height: 1)
+                }
+                .foregroundColor(Color(red: 1, green: 1, blue: 1, opacity: 0.6))
+                .padding(0)
                 
+                // Radio Group Option Selection
                 VStack {
                     if(destination == .controlsTripleTap) {
-                        Picker("", selection: $store.selectedTripleTapOp) {
+                        Picker("", selection: $store.selectedTripleTapOp[store.earBudSelectedSide == EarBudSide.left.rawValue ? 0 : 1]) {
                             ForEach(TripleTapOptions.allCases, id: \.self) {
                                 Text($0.rawValue.capitalized)
                                     .padding(3)
@@ -56,7 +67,7 @@ struct ControlsDetailView: View {
                     }
                     
                     else {
-                        Picker("", selection: $store.selectedtapAndHoldOp) {
+                        Picker("", selection: $store.selectedtapAndHoldOp[store.earBudSelectedSide == EarBudSide.left.rawValue ? 0 : 1]) {
                             ForEach(TapAndHoldOptions.allCases, id: \.self) {
                                 Text($0.rawValue.capitalized)
                                     .padding(3)
