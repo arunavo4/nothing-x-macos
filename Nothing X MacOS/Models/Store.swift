@@ -56,7 +56,7 @@ class Store: ObservableObject {
     
     @Published var noiseControlSelected = NoiseControlOptions.transparency.rawValue
     
-    @Published var leftBattery: Float16 = 40
-    @Published var caseBattery: Float16 = 70
-    @Published var rightBattery: Float16 = 50
+    @Published var leftBattery: Float = 40.0
+    @Published var caseBattery: Float = 70.0
+    @Published var rightBattery: Float = 50.0
 }
