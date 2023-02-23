@@ -11,9 +11,6 @@ import SwiftUI
 struct Nothing_X_MacOSApp: App {
     @StateObject var store = Store()
     
-    @State var batteryPercent: String = "49"
-    let indiceType: String = "circle" //circle | circle.fill | square | square.fill
-    
     var body: some Scene {
         MenuBarExtra {
             NavigationStack {
@@ -32,7 +29,8 @@ struct Nothing_X_MacOSApp: App {
             }
             .environmentObject(store)
         } label: {
-            Label(batteryPercent, systemImage: "\(batteryPercent).\(indiceType)" )
+            Label("\(Double((self.store.leftBattery + self.store.rightBattery)) / 2.0, specifier: "%.0f")%", systemImage: "earbuds")
+                .labelStyle(.titleAndIcon)
         }
         .menuBarExtraStyle(.window)
     
