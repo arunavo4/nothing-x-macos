@@ -35,11 +35,11 @@ enum NoiseControlOptions: String, CaseIterable, Identifiable, Hashable {
     var icon: String {
         switch self {
             case .anc:
-                return "checkmark.seal.fill"
+                return "person.crop.circle"
             case .transparency:
-                return "cube.transparent.fill"
+                return "person.and.background.dotted"
             case .off:
-                return "xmark.seal.fill"
+                return "person.crop.circle.dashed"
         }
     }
     
@@ -56,9 +56,7 @@ class Store: ObservableObject {
     
     @Published var noiseControlSelected = NoiseControlOptions.transparency.rawValue
     
-    @Published var leftBattery: Float16 = 50
+    @Published var leftBattery: Float16 = 40
     @Published var caseBattery: Float16 = 70
     @Published var rightBattery: Float16 = 50
-    
-    
 }
