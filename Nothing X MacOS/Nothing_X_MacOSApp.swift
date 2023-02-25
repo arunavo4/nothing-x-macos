@@ -29,7 +29,7 @@ struct Nothing_X_MacOSApp: App {
             }
             .environmentObject(store)
         } label: {
-            Label("\(Double((self.store.leftBattery + self.store.rightBattery)) / 2.0, specifier: "%.0f")%", systemImage: "earbuds")
+            Label("\(Double((self.store.leftBattery + self.store.rightBattery)) / 2.0, specifier: "%.0f")%", image: "nothing.ear.1")
                 .labelStyle(.titleAndIcon)
         }
         .menuBarExtraStyle(.window)
