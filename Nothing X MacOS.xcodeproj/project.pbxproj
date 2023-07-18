@@ -19,6 +19,7 @@
 		D60C148A2969A98C003E10D4 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60C14892969A98C003E10D4 /* BluetoothManager.swift */; };
 		D62BA6B5299A7EA3007D52C2 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62BA6B4299A7EA2007D52C2 /* ButtonStyles.swift */; };
 		D65CE68329AA954700B5B84E /* nothing-ear-1.svg in Resources */ = {isa = PBXBuildFile; fileRef = D65CE68229AA954700B5B84E /* nothing-ear-1.svg */; };
+		D6A7B0602A664C66001DDEAF /* CRC16.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A7B05F2A664C66001DDEAF /* CRC16.swift */; };
 		D6AEF335299BD56200FB5DBC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEF334299BD56200FB5DBC /* HomeView.swift */; };
 		D6AEF337299BD58600FB5DBC /* ConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEF336299BD58600FB5DBC /* ConnectView.swift */; };
 		D6AEF339299BD5C900FB5DBC /* EqualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AEF338299BD5C900FB5DBC /* EqualizerView.swift */; };
@@ -78,6 +79,7 @@
 		D60C14892969A98C003E10D4 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 		D62BA6B4299A7EA2007D52C2 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		D65CE68229AA954700B5B84E /* nothing-ear-1.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "nothing-ear-1.svg"; sourceTree = "<group>"; };
+		D6A7B05F2A664C66001DDEAF /* CRC16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRC16.swift; sourceTree = "<group>"; };
 		D6AEF334299BD56200FB5DBC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D6AEF336299BD58600FB5DBC /* ConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectView.swift; sourceTree = "<group>"; };
 		D6AEF338299BD5C900FB5DBC /* EqualizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualizerView.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			children = (
 				D60C14892969A98C003E10D4 /* BluetoothManager.swift */,
 				D6EB900C29A4868200D4C542 /* Destination.swift */,
+				D6A7B05F2A664C66001DDEAF /* CRC16.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				D6AEF358299C846700FB5DBC /* BackButtonView.swift in Sources */,
 				D6AEF356299C80EF00FB5DBC /* DeviceNameDotTextView.swift in Sources */,
 				D6AEF34F299C7FA500FB5DBC /* NoiseControlView.swift in Sources */,
+				D6A7B0602A664C66001DDEAF /* CRC16.swift in Sources */,
 				D6BF8934299CDE430068BBE6 /* ProgressViewStyles.swift in Sources */,
 				D6AEF354299C808B00FB5DBC /* QuitButtonView.swift in Sources */,
 				D6AEF35A299C98A400FB5DBC /* SwitchToggleStyle.swift in Sources */,
